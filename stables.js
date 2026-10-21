@@ -88,3 +88,5 @@ let lateFeeMessage = "The monthly payment for " + ponyta.name + " is late and th
 
 console.log (visitorsMessage);
 console.log (lateFeeMessage);
+
+// MAKING CHANGES TO THIS FILE FOR NEW BRANCH
