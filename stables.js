@@ -42,17 +42,6 @@
 //                                                         ####
 //                                                          ##
 //
-// This is a template for your assignments and final project. You'll be setting up a stable and making
-// sure it runs smoothly.
-//
-// Please do not create a new file for each assignment!
-// Feel free to keep the headings (e.g.: "Variables"), but please delete any boilerplate
-// comments. E.g.: those seen on lines 58 - 68, for example. They are usually providing directions. 
-// (Your own comments, where necessary, are acceptable.)
-//
-// NOTE: UNLESS SPECIFIED, VARIABLE NAMING IS UP TO YOU. THERE SHOULD BE NO HARD-CODED
-// NUMBERS OR STRINGS WHERE VARIBALES WOULD BE PREFERRED.
-
 //------------------------- First day (Assignment 2) -------------------------//
 // 1st Horse
 let ponyta = {
@@ -61,7 +50,7 @@ let ponyta = {
     favoriteSnack: "biscuits 🍘",
     age: 2,
     monthlyRent: 300,
-    locationInside: true,
+    isHorseLocationInside: true,
     isFriendly: true,
     colour: "white"
 };
@@ -73,7 +62,7 @@ let rapidash = {
     favoriteSnack: "carrots 🥕",
     age: 5,
     monthlyRent: 500,
-    locationInside: false,
+    isHorseLocationInside: false,
     isFriendly: false,
     colour: "red"
 };
@@ -85,7 +74,7 @@ let lovely = {
     favoriteSnack: "milk cookies 🍪",
     age: 6,
     monthlyRent: 800,
-    locationInside: true,
+    isHorseLocationInside: true,
     isFriendly: false,
     colour: "pink"
 };
@@ -97,7 +86,7 @@ let muvmuv = {
     favoriteSnack: "apples 🍎",
     age: 3,
     monthlyRent: 400,
-    locationInside: true,
+    isHorseLocationInside: true,
     isFriendly: true,
     colour: "orange"
 };
@@ -112,18 +101,23 @@ lovely.isHungry = true;
 muvmuv.isHungry = true;
 
 // Variable that stores total number of stalls
-let totalStalls = 4;
+let totalStalls = 20;
 
 // Function that logs out how many stalls are available, given how many horses you have in your stable
-function availableStalls (numberOfHorses) { 
-    return totalStalls - numberOfHorses;
+function availableStalls (stalls, occupents) { 
+    console.log (stalls - occupents);
 };
-
-console.log(availableStalls(horses.length));
+availableStalls(25, 13);
+// room for 12 horses
+availableStalls(8, horses.length);
+// room for 4 horses
+availableStalls(totalStalls, horses.length);
+// room for 16 horses
 
 // Function that logs out how much will an individual horse owe if rent is paid late
+let lateFee = 1.20
 function latePayment (horse) {
-    console.log (horse.monthlyRent * 1.20);
+    console.log (horse.monthlyRent * lateFee);
 };
 
 latePayment (ponyta);
