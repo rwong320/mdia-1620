@@ -79,7 +79,10 @@ let lovely = {
     colour: "pink"
 };
 
-// 4th Horse
+// "horses" array variable
+let horses = [ponyta, rapidash, lovely];
+
+// 4th Horse added
 let muvmuv = {
     name: "Muvmuv",
     nickname: "Muv",
@@ -91,8 +94,7 @@ let muvmuv = {
     colour: "orange"
 };
 
-// "horses" array variable
-let horses = [ponyta, rapidash, lovely, muvmuv];
+horses.push (muvmuv);
 
 // Are the horses hungry or not?
 ponyta.isHungry = false;
@@ -104,8 +106,8 @@ muvmuv.isHungry = true;
 let totalStalls = 20;
 
 // Function that logs out how many stalls are available, given how many horses you have in your stable
-function availableStalls (stalls, occupents) { 
-    console.log (stalls - occupents);
+function availableStalls (stalls, occupiedStalls) { 
+    console.log (stalls - occupiedStalls);
 };
 availableStalls(25, 13);
 // room for 12 horses
@@ -115,12 +117,11 @@ availableStalls(totalStalls, horses.length);
 // room for 16 horses
 
 // Function that logs out how much will an individual horse owe if rent is paid late
-let lateFee = 1.20
-function latePayment (horse) {
+function latePayment (horse, lateFee) {
     console.log (horse.monthlyRent * lateFee);
 };
 
-latePayment (ponyta);
+latePayment (muvmuv, 1.20);
 
 // Function that returns the nickname of a chosen horse
 function getNickname (horse) {
