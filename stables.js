@@ -42,49 +42,90 @@
 //                                                         ####
 //                                                          ##
 //
-// This is a template for your assignments and final project. You'll be setting up a stable and making
-// sure it runs smoothly.
-//
-// Please do not create a new file for each assignment!
-// Feel free to keep the headings (e.g.: "Variables"), but please delete any boilerplate
-// comments. E.g.: those seen on lines 58 - 68, for example. They are usually providing directions. 
-// (Your own comments, where necessary, are acceptable.)
-//
-// NOTE: UNLESS SPECIFIED, VARIABLE NAMING IS UP TO YOU. THERE SHOULD BE NO HARD-CODED
-// NUMBERS OR STRINGS WHERE VARIBALES WOULD BE PREFERRED.
-
-//------------------------- Setting up shop (Assignment 1) -------------------------//
+//------------------------- First day (Assignment 2) -------------------------//
 // 1st Horse
-let ponytaMonthlyRent = 300;
 let ponyta = {
     name: "Ponyta",
-    age: 2,
+    nickname: "Ponyo",
     favoriteSnack: "biscuits 🍘",
-    lateFee: ponytaMonthlyRent*1.20, // monthly rate + 20%
+    age: 2,
+    monthlyRent: 300,
+    isHorseLocationInside: true,
+    isFriendly: true,
+    colour: "white"
 };
 
 // 2nd Horse
-let rapidashMonthlyRent = 500;
 let rapidash = {
     name: "Rapidash",
-    age: 5,
+    nickname: "Horsey",
     favoriteSnack: "carrots 🥕",
-    lateFee: rapidashMonthlyRent*1.20, // monthly rate + 20%
+    age: 5,
+    monthlyRent: 500,
+    isHorseLocationInside: false,
+    isFriendly: false,
+    colour: "red"
 };
 
 // 3rd Horse
-let lovelyMonthlyRent = 800;
 let lovely = {
     name: "Lovely",
-    age: 6,
+    nickname: "Love",
     favoriteSnack: "milk cookies 🍪",
-    lateFee: lovelyMonthlyRent*1.20, // monthly rate + 20%
+    age: 6,
+    monthlyRent: 800,
+    isHorseLocationInside: true,
+    isFriendly: false,
+    colour: "pink"
 };
 
-// Variables
-let stableName = "Whimsical House Stable"
-let visitorsMessage = "Welcome to " + stableName + "!"
-let lateFeeMessage = "The monthly payment for " + ponyta.name + " is late and the total amount owing with the late fee included is $" + ponyta.lateFee
+// "horses" array variable
+let horses = [ponyta, rapidash, lovely];
 
-console.log (visitorsMessage);
-console.log (lateFeeMessage);
+// 4th Horse added
+let muvmuv = {
+    name: "Muvmuv",
+    nickname: "Muv",
+    favoriteSnack: "apples 🍎",
+    age: 3,
+    monthlyRent: 400,
+    isHorseLocationInside: true,
+    isFriendly: true,
+    colour: "orange"
+};
+
+horses.push (muvmuv);
+
+// Are the horses hungry or not?
+ponyta.isHungry = false;
+rapidash.isHungry = false;
+lovely.isHungry = true;
+muvmuv.isHungry = true;
+
+// Variable that stores total number of stalls
+let totalStalls = 20;
+
+// Function that logs out how many stalls are available, given how many horses you have in your stable
+function availableStalls (stalls, occupiedStalls) { 
+    console.log (stalls - occupiedStalls);
+};
+availableStalls(25, 13);
+// room for 12 horses
+availableStalls(8, horses.length);
+// room for 4 horses
+availableStalls(totalStalls, horses.length);
+// room for 16 horses
+
+// Function that logs out how much will an individual horse owe if rent is paid late
+function latePayment (horse, lateFee) {
+    console.log (horse.monthlyRent * lateFee);
+};
+
+latePayment (muvmuv, 1.20);
+
+// Function that returns the nickname of a chosen horse
+function getNickname (horse) {
+    return horse.nickname;
+};
+
+console.log (getNickname (rapidash));
