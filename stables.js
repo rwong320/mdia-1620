@@ -182,4 +182,15 @@ moveHorses(true);
 
 //------------------------- Bonus -------------------------//
 // Initialize a method on your horses that moves them inside if they are outside, and vice versa.
+let ponyta = {
+    name: "Ponyta",
+    isHorseLocationInside: true,
 
+    changeLocation: function() {
+        if (this.isHorseLocationInside == true) {
+            this.isHorseLocationInside = false;
+        } else {
+            this.isHorseLocationInside = true;
+        }
+    }
+};
