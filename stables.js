@@ -1,51 +1,27 @@
-// Welcome!
-//
-//                                                  #    #
-//                                             %%% ##   ##
-//                                          %%%%% ###%🎀###
-//                                         %%%%% ### %%% #
-//                                       %%%%%% ### %%% ###
-//                                        %%%% ## %% #######
-//                                       %%%%% # %% #@#####
-//                                     %%%%%% # % #########
-//                                    %%%%% ##### #########
-//                          ###        %% ####### #########
-//                 %%% ############    ########### ########
-//              %%%% ############################### #######
-//            %%%%% ################################## ######
-//          %%%%%% #################################### #C###
-//         %%%🌸%% #####################################  ###
-//         %%%%% #######################################
-//        %%%%%% ############### BEANS ##################
-//     % %%%%%%% ############### BEANS ##################
-//      %%%%%%%%% ############## BEANS ##################
-//     %%%%%%%%%% ########################################
-//  %%% %%%%%%%%   ###### ################################
-//    %%%%%%%%      ###### #################### ##########
-// % %%%🌸%%%%        ####### ########### ###### ##########
-//  %%%%%%%%%         #######  ########### ###### ########
-// %%%%%%%%%%          ##### ###  ######### ####### ######
-//  %%%%%%%%%%          #### ##               ####### ####
-//  %🌸%%%%%%%%%           ## #                  ##### ###
-//   %%  %% % %%         # ##                      ## ###
-//     %   %    %        # ###                      # ###
-//                        # ###                     ## ###
-//                        # ###                     ## ###
-//                        # ####                   #### ##
-//                       ### ###                  ##### ###
-//                      ####  ###                 ####   ##
-//                     #####   ###                 ##    ##
-//                    #####    ####                      ###
-//                     ##        ###                     ###
-//                                ####                     ##
-//                                 ####                    ###
-//                                                         ####
-//                                                          ##
-//
+// ,~~_                             ((^--__
+// |/\ =_ _ ~                       | /\  --___ __
+//  _( )_( )\~~                         (  /  \  ) \\
+//  \,\  _|\ \~~~                       / |~~~~/  \  \\
+//     \`   \                          /    \ /      \
+//     `    `
+//  ,
+// /,`\
+// ` | \____\\
+//  _(      ) \
+//  \-\~~~_|\  \
+//     \ `   \  `
+//     `     `
+//             .''
+//   ._.-.___.' (`\
+//  //(        ( `'
+// '/ )\ ).__. ) 
+// ' <' `\ ._/'\
+//    `   \     \
+
 //------------------------- First day (Assignment 2) -------------------------//
 // 1st Horse
 let ponyta = {
-    name: "Ponyta",
+    name: "Ponyta 🐴",
     nickname: "Ponyo",
     favoriteSnack: "biscuits 🍘",
     age: 2,
@@ -57,7 +33,7 @@ let ponyta = {
 
 // 2nd Horse
 let rapidash = {
-    name: "Rapidash",
+    name: "Rapidash 🦄",
     nickname: "Horsey",
     favoriteSnack: "carrots 🥕",
     age: 5,
@@ -69,7 +45,7 @@ let rapidash = {
 
 // 3rd Horse
 let lovely = {
-    name: "Lovely",
+    name: "Lovely 💖",
     nickname: "Love",
     favoriteSnack: "milk cookies 🍪",
     age: 6,
@@ -84,7 +60,7 @@ let horses = [ponyta, rapidash, lovely];
 
 // 4th Horse added
 let muvmuv = {
-    name: "Muvmuv",
+    name: "Muvmuv 🧡",
     nickname: "Muv",
     favoriteSnack: "apples 🍎",
     age: 3,
@@ -132,7 +108,7 @@ console.log (getNickname (rapidash));
 
 //------------------------- Day to day operations (Project) -------------------------//
 
-// Loop that checks to find out if a certain horse likes a particular treat. If the horse does not like the treat, log out their disatisfaction and check the next horse. Exit the loop when you find the horse that likes the treat.
+// Loop that checks if a certain horse likes a particular treat. If the horse does not like the treat, log out their disatisfaction and check the next horse. Exit the loop when you find the horse that likes the treat.
 let particularTreat = "apples 🍎";
 
 for (const horse of horses) {
@@ -143,7 +119,7 @@ for (const horse of horses) {
     }
 };
 
-// Create a function references one of your unique horse properties. It should contain a conditional or a loop. Invoke it for each horse.
+// Function references one of your unique horse properties. It should contain a conditional or a loop.
 function checkFriendliness (horse) {
     if (horse.isFriendly == true) {
         console.log(horse.name + " is friendly.");
@@ -151,32 +127,59 @@ function checkFriendliness (horse) {
     else {console.log(horse.name + " is not friendly.");
     }
 };
-
+// Invoke it for each horse.
 checkFriendliness(ponyta);
 checkFriendliness(rapidash);
 checkFriendliness(lovely);
 checkFriendliness(muvmuv);
 
-// Create and invoke a function that moves any number horses of your choice outside. It should log out statement indicating the horses have been moved to spend time in the sun. 
-function moveOutside (horsesToMove) {
-    for (const horse of horsesToMove) {
+// Function that moves any number horses of your choice outside. It should log out statement indicating the horses have been moved to spend time in the sun. 
+function moveOutside (horses) {
+    for (const horse of horses) {
         horse.isHorseLocationInside = false;
         console.log(horse.name + " has been moved outside to spend time in the sun!");
     }
 };
-// (The function should be able to move a single horse, or multiple horses, depending on the parameters specified)
+// Able to move a single horse, or multiple horses, depending on the parameters specified
 moveOutside([ponyta]);
 moveOutside([rapidash, lovely]);
 
-// Create and invoke a function that feeds your horses. If the horse is outside, it should call them in, and then all horses should be fed a treat. Log the activity of the horses.
+// Function that feeds your horses. If the horse is outside, it should call them in, and then all horses should be fed a treat.
+function feedHorse (horses) {
+    for (const horse of horses) {
+        if (horse.isHorseLocationInside == false) {
+            horse.isHorseLocationInside = true;
+            console.log(horse.name + " has been called inside.")
+        }
+         console.log(horse.name + " has been fed " + horse.favoriteSnack);
+    }
+};
 
+feedHorse(horses);
 
-// Bedtime! Update the function that lets your horses outside so that it also calls them
-// in if it is getting dark. Only the horses that moved should log out a message. Invoke the function.
+// Function that lets your horses outside so that it also calls them in if it is getting dark. Only the horses that moved should log out a message.
+function moveHorses(isDark) {
+    for (const horse of horses) {
+        if (isDark == true) {
+            if (horse.isHorseLocationInside == false) {
+                horse.isHorseLocationInside = true;
+                console.log(horse.name + " has been called inside for bedtime!");
+            }
+        } 
+        else {
+            if (horse.isHorseLocationInside == true) {
+                horse.isHorseLocationInside = false;
+                console.log(horse.name + " has been moved outside to spend time in the sun!");
+            }
+        }
+    }
+};
+
+// Moves all horses outside
+moveHorses(false);
+// Moves all horses inside
+moveHorses(true);
 
 //------------------------- Bonus -------------------------//
-
-// Replace the ascii art at the top of the file with art representing your stable.
-// Initialize a method on your horses that moves them inside if they are outside, and
-// vice versa.
+// Initialize a method on your horses that moves them inside if they are outside, and vice versa.
 
