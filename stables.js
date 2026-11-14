@@ -129,3 +129,54 @@ function getNickname (horse) {
 };
 
 console.log (getNickname (rapidash));
+
+//------------------------- Day to day operations (Project) -------------------------//
+
+// Loop that checks to find out if a certain horse likes a particular treat. If the horse does not like the treat, log out their disatisfaction and check the next horse. Exit the loop when you find the horse that likes the treat.
+let particularTreat = "apples 🍎";
+
+for (const horse of horses) {
+    if (horse.favoriteSnack == particularTreat) {
+        console.log(horse.name + " likes " + particularTreat + "!");
+    }
+    else {console.log(horse.name + " does not like " + particularTreat + ".");
+    }
+};
+
+// Create a function references one of your unique horse properties. It should contain a conditional or a loop. Invoke it for each horse.
+function checkFriendliness (horse) {
+    if (horse.isFriendly == true) {
+        console.log(horse.name + " is friendly.");
+    }
+    else {console.log(horse.name + " is not friendly.");
+    }
+};
+
+checkFriendliness(ponyta);
+checkFriendliness(rapidash);
+checkFriendliness(lovely);
+checkFriendliness(muvmuv);
+
+// Create and invoke a function that moves any number horses of your choice outside. It should log out statement indicating the horses have been moved to spend time in the sun. 
+function moveOutside (horsesToMove) {
+    for (const horse of horsesToMove) {
+        horse.isHorseLocationInside = false;
+        console.log(horse.name + " has been moved outside to spend time in the sun!");
+    }
+};
+// (The function should be able to move a single horse, or multiple horses, depending on the parameters specified)
+moveOutside([ponyta]);
+moveOutside([rapidash, lovely]);
+
+// Create and invoke a function that feeds your horses. If the horse is outside, it should call them in, and then all horses should be fed a treat. Log the activity of the horses.
+
+
+// Bedtime! Update the function that lets your horses outside so that it also calls them
+// in if it is getting dark. Only the horses that moved should log out a message. Invoke the function.
+
+//------------------------- Bonus -------------------------//
+
+// Replace the ascii art at the top of the file with art representing your stable.
+// Initialize a method on your horses that moves them inside if they are outside, and
+// vice versa.
+
